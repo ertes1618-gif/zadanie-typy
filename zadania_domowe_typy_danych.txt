@@ -1,0 +1,106 @@
+Cwiczenie 1.1
+bool: true, false | operacje logiczne | 1 bajt
+int32: 5, -10 | operacje arytmetyczne | 4 bajty
+char: 'a', 'Z' | operacje na znakach | 1 bajt
+
+Cwiczenie 1.2
+a) statyczne, bo zmienna int nie może przyjąć stringa
+b) dynamiczne, bo zmienna może zmieniać typ w locie
+c) statyczne, bo kompilator sam domyśla się typu double
+d) dynamiczne, bo JavaScript pozwala zmieniać typy
+
+Cwiczenie 1.3
+Python:
+"5" + 3 -> błąd
+"5" * 2 -> "55"
+"10" - 5 -> błąd
+True + 1 -> 2
+
+JavaScript:
+"5" + 3 -> "53"
+"5" * 2 -> 10
+"10" - 5 -> 5
+True + 1 -> 1
+
+Cwiczenie 1.4
+a) 7
+b) -7
+c) 5.0
+d) 6
+e) 7
+Różnica wynika z kolejności działań: w d rzutujemy każdą liczbę osobno na int i dodajemy (3+3), a w e najpierw dodajemy liczby zmiennoprzecinkowe (7.0), a potem rzutujemy całość na int.
+
+Cwiczenie 1.5
+Wyjątek: ValueError
+Oznacza próbę przekonwertowania tekstu, który nie jest liczbą całkowitą, na typ int.
+
+Lekcja 2
+Cwiczenie 2.1
+4 bity: 16 wartości, zakres bez znaku 0..15, ze znakiem -8..7
+8 bitów: 256 wartości, zakres bez znaku 0..255, ze znakiem -128..127
+16 bitów: 65536 wartości, zakres bez znaku 0..65535, ze znakiem -32768..32767
+
+Cwiczenie 2.2
+Bez znaku:
+a) 15
+b) 128
+c) 255
+Ze znakiem U2:
+a) 15
+b) -128
+c) -1
+
+Cwiczenie 2.3
+Wartości: 120 -> 130 -> -126 -> -116
+Wartość stanie się ujemna po 2 krokach.
+
+Cwiczenie 2.4
+a) 3
+b) 2
+c) -3
+d) 8 stron
+Wzór: (n + k - 1) // k
+
+Cwiczenie 2.5
+Wiek człowieka: int8 (małe liczby)
+Rok kalendarzowy: int16 (wystarcza na lata)
+Liczba mieszkańców Polski: int32 (ok. 38 milionów)
+Liczba mieszkańców Ziemi: int32 lub int64 (ok. 8 miliardów, mieści się w int64)
+Liczba bajtów pliku wideo: int64 (duże pliki)
+Temperatura w C: int8 (mały zakres)
+
+Cwiczenie 2.6
+Wynik to -128. Przepełnienie w numpy powoduje zawinięcie wartości od początku zakresu typu.
+
+Lekcja 3
+Cwiczenie 3.1
+Współrzędne GPS: double, bo potrzeba dużej precyzji
+Kolor piksela: float, bo wystarczy mniejsza dokładność
+Obliczenia naukowe: double, wysoka precyzja
+Saldo konta: double (lub Decimal), unikamy błędów zaokrągleń
+
+Cwiczenie 3.2
+Dokładne: 0,5; 0,25; 0,75; 0,125; 1,5
+Reguła: Liczbę da się zapisać dokładnie, gdy mianownik ułamka jest potęgą dwójki.
+
+Cwiczenie 3.3
+Wyniki pokazują błędy precyzji zmiennoprzecinkowej. Zaskakuje wynik 0.1 + 0.2 == 0.3 dający False.
+
+Cwiczenie 3.4
+Przyczyna: Porównywanie floatów bezpośrednio bywa błędne przez zaokrąglenia.
+Poprawa:
+def czy_zaplacono(kwota_wplacona, kwota_do_zaplaty):
+    return abs(kwota_wplacona - kwota_do_zaplaty) < 1e-9
+
+Cwiczenie 3.5
+a) inf
+b) -inf
+c) nan
+d) błąd (ZeroDivisionError)
+e) nan
+f) False
+
+Cwiczenie 3.6
+a) 59.969999999999998
+b) Użycie integerów (przechowywanie w groszach) lub modułu decimal.
+c) DECIMAL(10, 2)
