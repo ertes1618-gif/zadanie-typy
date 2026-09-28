@@ -1,0 +1,133 @@
+Ćwiczenie 4.1
+F F → F F T F T
+F T → F T T T T
+T F → F T F T T
+T T → T T F F F
+
+Ćwiczenie 4.2
+a) Jeśli lista = null, drugi warunek nie zostanie sprawdzony.
+b) Po zamianie kolejności może wystąpić błąd, bo lista.size() zostanie wykonane dla null.
+c) if (lista == null || lista.size() == 0)
+
+Ćwiczenie 4.3
+a) 68
+b) 122
+c) J
+d) 7
+e) A
+
+Ćwiczenie 4.4
+jeśli znak >= 'A' i znak <= 'Z':
+zwróć znak + 32
+inaczej:
+zwróć znak
+
+Ćwiczenie 4.5
+a) F – ASCII używa 7 bitów.
+b) F – Unicode przypisuje kody znakom.
+c) P
+d) F – znak UTF-8 zajmuje 1–4 bajty.
+e) P
+f) F – emoji można zapisać w UTF-8.
+
+Ćwiczenie 4.6
+a) Mojibake.
+b) Nie, dane nie muszą być uszkodzone. Plik został odczytany w złym kodowaniu.
+c) HTML, nagłówki HTTP, baza danych.
+
+Ćwiczenie 4.7
+Ala – 3 znaki, 3 bajty
+Zażółć – 6 znaków, 8 bajtów
+cześć 😀 – 7 znaków, 10 bajtów
+Niektóre znaki w UTF-8 zajmują więcej niż 1 bajt.
+
+Ćwiczenie 5.1
+a) 11
+b) P
+c) g
+d) a
+e) Program
+f) 5
+
+Ćwiczenie 5.2
+a) Wystąpi błąd.
+b) tekst = "b" + tekst[1:]
+c) 2 obiekty str.
+
+Ćwiczenie 5.3
+a) A | l | a | \0
+b) 3 | A | l | a
+Szybsza jest wersja z zapisaną długością, bo długość jest już znana.
+
+Ćwiczenie 5.4
+a) Tworzony jest nowy napis przy każdym +=.
+b)
+wynik = []
+for i in range(100000):
+wynik.append(str(i))
+wynik = "".join(wynik)
+c) StringBuilder.
+
+Ćwiczenie 5.5
+wiersz = wiersz.strip()
+pola = wiersz.split(";")
+print(pola[0])
+print(pola[2][:4])
+
+Ćwiczenie 5.6
+"Ananas"
+"Banan"
+"ananas"
+"banan"
+"zebra"
+"Żaba"
+
+Nie. Komputer porównuje kody znaków. Trzeba użyć sortowania zgodnego z językiem polskim.
+
+Ćwiczenie 6.1
+Imię – String – tekst.
+Wiek – int – liczba całkowita.
+PESEL – String – nie wykonujemy na nim obliczeń.
+Numer telefonu – String – nie wykonujemy na nim obliczeń.
+Adres e-mail – String – tekst.
+Zgoda na regulamin – boolean – tak/nie.
+Wzrost – int – liczba całkowita.
+Waga – double – może mieć przecinek.
+
+Ćwiczenie 6.2
+id_zamowienia – int – identyfikator.
+id_klienta – int – identyfikator.
+data_zlozenia – LocalDateTime – data i czas.
+wartosc_brutto – BigDecimal – pieniądze.
+liczba_pozycji – int – liczba całkowita.
+czy_oplacone – boolean – tak/nie.
+kod_rabatowy – String – tekst.
+
+Ćwiczenie 6.3
+a) float saldo_konta – źle, lepiej BigDecimal.
+b) int numer_telefonu – źle, powinien być String.
+c) byte liczba_uczniow_w_szkole – źle, powinien być int.
+d) int identyfikator_uzytkownika – może być poprawny.
+e) char plec – poprawny.
+f) int kod_pocztowy – źle, powinien być String.
+
+Ćwiczenie 6.4
+a) float lub double.
+b) 525600 odczytów.
+c) float – 2 102 400 bajtów, double – 4 204 800 bajtów.
+d) Można zapisywać temperaturę ×10 jako short, np. 23,4°C = 234.
+
+Ćwiczenie 6.5
+Przykład – dziennik elektroniczny:
+
+Imię – String – tekst.
+Nazwisko – String – tekst.
+ID ucznia – int – identyfikator.
+Wiek – byte – 0–127.
+Ocena – byte – 1–6.
+Frekwencja – float – 0–100%.
+Czy obecny – boolean – tak/nie.
+Data lekcji – LocalDate – data.
+Numer klasy – String – np. 2p.
+Liczba nieobecności – int – liczba całkowita.
+Średnia – double – liczba z przecinkiem.
